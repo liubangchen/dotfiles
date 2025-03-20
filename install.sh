@@ -236,20 +236,20 @@ ln -sf $DOTFILES/.tmux.conf.local $HOME/.tmux.conf.local
 ln -sf $DOTFILES/.markdownlintrc $HOME/.markdownlintrc
 ln -sf $DOTFILES/starship.toml $HOME/.config/starship.toml
 
-cp -u $DOTFILES/.npmrc $HOME/.npmrc
-cp -u $DOTFILES/.gemrc $HOME/.gemrc
-mkdir -p $HOME/.cargo && cp -u $DOTFILES/cargo.toml $HOME/.cargo/config.toml
-cp -u $DOTFILES/.zshrc.local $HOME/.zshrc.local
-mkdir -p $HOME/.pip; cp -u $DOTFILES/.pip.conf $HOME/.pip/pip.conf
+cp -rf $DOTFILES/.npmrc $HOME/.npmrc
+cp -rf $DOTFILES/.gemrc $HOME/.gemrc
+mkdir -rf $HOME/.cargo && cp -rf $DOTFILES/cargo.toml $HOME/.cargo/config.toml
+cp -rf $DOTFILES/.zshrc.local $HOME/.zshrc.local
+mkdir -rf $HOME/.pip; cp -rf $DOTFILES/.pip.conf $HOME/.pip/pip.conf
 
 ln -sf $DOTFILES/.gitignore_global $HOME/.gitignore_global
 ln -sf $DOTFILES/.gitconfig_global $HOME/.gitconfig_global
 if is_mac; then
-    cp -u $DOTFILES/.gitconfig_macOS $HOME/.gitconfig
+    cp -rf $DOTFILES/.gitconfig_macOS $HOME/.gitconfig
 elif is_cygwin; then
-    cp -u $DOTFILES/.gitconfig_cygwin $HOME/.gitconfig
+    cp -rf $DOTFILES/.gitconfig_cygwin $HOME/.gitconfig
 else
-    cp -u $DOTFILES/.gitconfig_linux $HOME/.gitconfig
+    cp -rf $DOTFILES/.gitconfig_linux $HOME/.gitconfig
 fi
 
 if is_cygwin; then
